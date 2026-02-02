@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine 💘</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffe6eb;
+    font-family: Arial, sans-serif;
+  }
+
+  .box {
+    width: 90%;
+    max-width: 350px;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  h1 {
+    color: #e91e63;
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  button {
+    width: 100px;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  #yes {
+    background: #e91e63;
+    color: white;
+    margin-right: 10px;
+  }
+
+  #no {
+    background: #ccc;
+    color: black;
+    position: absolute;
+  }
+
+  #message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #e91e63;
+    display: none;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>Do you want to be my Valentine? 💖</h1>
+  <button id="yes" onclick="sayYes()">Yes 💘</button>
+  <button id="no" ontouchstart="moveNo()" onmouseover="moveNo()">No 💔</button>
+  <div id="message">Yaaay! I knew it 😍💞</div>
+</div>
+
+<script>
+  function moveNo() {
+    const noBtn = document.getElementById("no");
+    const maxX = window.innerWidth - 120;
+    const maxY = window.innerHeight - 60;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
+
+  function sayYes() {
+    document.getElementById("message").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
